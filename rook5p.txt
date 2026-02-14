@@ -1,0 +1,411 @@
+
+
+
+
+{
+  "id": "gameID10",
+
+  "x": 902,
+  "y": -567,
+  "width": 100,
+  "height": 100,
+
+  "movable": false,
+  "movableInEdit": true,
+
+  "css": {
+    "background": "blue",
+    "color": "white",
+    "font-size": "26px"
+  },
+  "text": "Crow (Similar to Rook)",
+
+  "displayArray": [
+    [
+      "playerAidButton",
+      1
+    ]
+  ],
+
+ "messageArray": [
+    {
+      "value": "Default",
+      "text": "Click here to choose message"
+    },
+    {
+      "value": "No-Trump High",
+      "text": "No-Trump High"
+    },
+    {
+      "value": "No-Trump Low",
+      "text": "No-Trump Low"
+    }
+  ],
+
+
+
+
+  "gameID": true,
+  "hideCardsByType": [
+    "1 black",
+    "2 black",
+    "3 black",
+    "4 black",
+    "5 black",
+    "6 black",
+    "7 black",
+    "8 black",
+    "9 black",
+    "10 black",
+    "11 black",
+    "12 black",
+    "13 black",
+    "14 black",
+    "-5 auction",
+    "x2 auction",
+    "ally auction"
+  ],
+  "hintText": "\"After round is over, if any point cards were discarded, move them to the appropriate holder (usually the player that took the last trick). Press Add Card Points button to calculate captured points and display them on the small temporary holder. After verifying points, press Transfer Score button to move points to main scoreboard.\\a\\a Versions: The default version uses 180 point scoring. The other version adds the orange two back into the deck worth 20 points as the highest card, even above the crow.\"",
+  "roundsTemp": [
+    "Card Points"
+  ],
+  "scoreSystem": [
+    [
+      0,
+      15,
+      20,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0,
+      0,
+      0,
+      10,
+      20
+    ],
+    [],
+    [],
+    []
+  ],
+  "settingsArray": [
+    [
+      "showBidSuit",
+      false
+    ],
+    [
+      "showTricks",
+      false
+    ],
+    [
+      "showDiscard",
+      true
+    ]
+  ],
+  "settingsDecksArray": [
+    [
+      "cardCount",
+      10
+    ],
+    [
+      "deckType",
+      3
+    ],
+    [
+      "hideCards",
+      1
+    ],
+    [
+      "seatCount",
+      5
+    ],
+    [
+      "teamScore",
+      false
+    ],
+    [
+      "tempScore",
+      true
+    ],
+    [
+      "contractType",
+      true
+    ],
+    [
+      "variableScore",
+      2
+    ]
+  ],
+  "sort1": "sortKentucky",
+  "sort2": "suit",
+  "transferButtonReturn": false,
+  "version1": {
+    "settingsDecksArray": [
+      [
+        "cardCount",
+        10
+      ],
+      [
+        "deckType",
+        3
+      ],
+      [
+        "hideCards",
+        1
+      ],
+      [
+        "seatCount",
+        5
+      ],
+      [
+        "teamScore",
+        false
+      ],
+      [
+        "tempScore",
+        true
+      ],
+      [
+        "contractType",
+        true
+      ],
+      [
+        "variableScore",
+        2
+      ]
+    ],
+    "hideCardsByType": [
+      "1 black",
+      "2 black",
+      "3 black",
+      "4 black",
+      "5 black",
+      "6 black",
+      "7 black",
+      "8 black",
+      "9 black",
+      "10 black",
+      "11 black",
+      "12 black",
+      "13 black",
+      "14 black",
+      "-5 auction",
+      "x2 auction",
+      "ally auction"
+    ]
+  },
+  "version2": {
+    "settingsDecksArray": [
+      [
+        "cardCount",
+        10
+      ],
+      [
+        "deckType",
+        3
+      ],
+      [
+        "seatCount",
+        5
+      ],
+      [
+        "tempScore",
+        true
+      ]
+    ],
+    "hideCardsByType": [
+      "2 red",
+      "3 red",
+      "4 red",
+      "2 green",
+      "3 green",
+      "4 green",
+      "2 yellow",
+      "3 yellow",
+      "4 yellow",
+      "2 orange",
+      "3 orange",
+      "4 orange",
+      "1 black",
+      "3 black",
+      "4 black",
+      "5 black",
+      "6 black",
+      "7 black",
+      "8 black",
+      "9 black",
+      "10 black",
+      "11 black",
+      "12 black",
+      "13 black",
+      "14 black",
+      "-5 auction",
+      "x2 auction",
+      "ally auction"
+    ]
+  },
+  "versionArray": [
+    {
+      "value": "0",
+      "text": "Click here to choose version"
+    },
+    {
+      "value": "1",
+      "text": "Kentucky 180 Points"
+    },
+    {
+      "value": "2",
+      "text": "Kentucky 200 Points"
+    }
+  ],
+
+  "preSetExceptionsRoutine": [
+    {
+      "func": "SET",
+      "collection": [
+        "trump"
+      ],
+      "property": "faces",
+      "value": "${PROPERTY trumpFaces}"
+    },
+    {
+      "func": "SET",
+      "collection": [
+        "trump"
+      ],
+      "property": "customFaceCount",
+      "value": 5
+    }
+  ],
+  "sortPreExceptionsRoutine": [
+    "var trump = ${PROPERTY trump OF trump}",
+    {
+      "func": "SELECT",
+      "type": "card",
+      "property": "cardType",
+      "value": "0 crow",
+      "collection": "crow"
+    },
+    {
+      "func": "SET",
+      "collection": "crow",
+      "property": "suit",
+      "value": "${trump}"
+    },
+    {
+      "func": "SELECT",
+      "type": "card",
+      "property": "cardType",
+      "value": "2 black",
+      "collection": "deuce"
+    },
+    {
+      "func": "SET",
+      "collection": "deuce",
+      "property": "suit",
+      "value": "${trump}"
+    }
+  ],
+  "transferExceptionsRoutine": [
+    "var bidNS = max ${PROPERTY text OF bidValue1} ${PROPERTY text OF bidValue5}",
+    "var bidEW = max ${PROPERTY text OF bidValue3} ${PROPERTY text OF bidValue7}",
+    "var bidValue = max ${bidNS} ${bidEW}",
+    "var bidValueString = ${bidValue} + ''",
+    {
+      "func": "SELECT",
+      "property": "id",
+      "relation": "in",
+      "value": [
+        "bidValue1",
+        "bidValue3",
+        "bidValue5",
+        "bidValue7"
+      ]
+    },
+    {
+      "func": "SELECT",
+      "source": "DEFAULT",
+      "property": "text",
+      "value": "${bidValueString}"
+    },
+    {
+      "func": "GET",
+      "property": "parent",
+      "variable": "bidWinner"
+    },
+    "var bidWinnerNS = ${bidNS} == ${bidValue}",
+    "var bidWinnerEW = ${bidEW} == ${bidValue}",
+    {
+      "func": "FOREACH",
+      "in": "${PROPERTY _totals OF tempScoreboard}",
+      "loopRoutine": [
+        "var pointsWon = ${value}",
+        {
+          "func": "IF",
+          "operand1": "${key}",
+          "operand2": 2,
+          "thenRoutine": [
+            "var key = 3"
+          ]
+        },
+        "var seat = 'seat' + ${key}",
+        {
+          "func": "IF",
+          "operand1": "${key}",
+          "operand2": 1,
+          "thenRoutine": [
+            {
+              "func": "IF",
+              "condition": "${bidWinnerNS}",
+              "thenRoutine": [
+                {
+                  "func": "IF",
+                  "operand1": "${bidValue}",
+                  "relation": ">",
+                  "operand2": "${pointsWon}",
+                  "thenRoutine": [
+                    "var value = ${bidValue} * -1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "func": "IF",
+          "operand1": "${key}",
+          "operand2": 3,
+          "thenRoutine": [
+            {
+              "func": "IF",
+              "condition": "${bidWinnerEW}",
+              "thenRoutine": [
+                {
+                  "func": "IF",
+                  "operand1": "${bidValue}",
+                  "relation": ">",
+                  "operand2": "${pointsWon}",
+                  "thenRoutine": [
+                    "var value = ${bidValue} * -1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "func": "SCORE",
+          "mode": "set",
+          "property": "score",
+          "round": "${PROPERTY currentRound OF scoreboard}",
+          "seats": "${seat}",
+          "value": "${value}"
+        }
+      ]
+    }
+  ]
+}
